@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Life4DunBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7433d1c76e9756363df983ee65327083889b9b14")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bc9df1d6c8f65f9d4c8646edbc9a53b93ef211a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Life4DunBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Life4DunBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
