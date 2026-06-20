@@ -76,6 +76,11 @@
             Lấy thông tin người chơi theo ID
             </summary>
         </member>
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.GetPlayersByUserId(System.Guid)">
+            <summary>
+            Lấy danh sách nhân vật (Players) theo UserId
+            </summary>
+        </member>
         <member name="M:Life4DunBackend.Api.Controllers.PlayersController.CreatePlayer(Life4DunBackend.Core.DTOs.CreatePlayerDto)">
             <summary>
             Khởi tạo nhân vật (Player) mới cho một User cụ thể.

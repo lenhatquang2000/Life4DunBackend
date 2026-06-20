@@ -109,6 +109,48 @@ public class PlayersController : ControllerBase
     }
 
     /// <summary>
+    /// Lấy danh sách nhân vật (Players) theo UserId
+    /// </summary>
+    [HttpGet("user/{userId}")]
+    public async Task<ActionResult<IEnumerable<PlayerDto>>> GetPlayersByUserId(Guid userId)
+    {
+        try
+        {
+            var players = await _context.Players
+                .Where(p => p.UserId == userId)
+                .Select(p => new PlayerDto
+                {
+                    Id = p.Id,
+                    UserId = p.UserId,
+                    Username = p.Username,
+                    Experience = p.Experience,
+                    Gold = p.Gold,
+                    Gems = p.Gems,
+                    CreatedAt = p.CreatedAt,
+                    LastLoginAt = p.LastLoginAt,
+                    AvatarUrl = p.AvatarUrl,
+                    Attributes = new PlayerAttributesDto
+                    {
+                        Level = p.Attributes.Level,
+                        Attack = p.Attributes.Attack,
+                        Defense = p.Attributes.Defense,
+                        Speed = p.Attributes.Speed,
+                        Health = p.Attributes.Health,
+                        MaxHealth = p.Attributes.MaxHealth
+                    }
+                })
+                .ToListAsync();
+
+            return Ok(players);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Error getting players by user id {userId}: {ex.Message}");
+            return StatusCode(500, "Internal server error");
+        }
+    }
+
+    /// <summary>
     /// Khởi tạo nhân vật (Player) mới cho một User cụ thể.
     /// </summary>
     /// <remarks>
