@@ -112,3 +112,4 @@ E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Api\obj\Debug\net8.0\ref
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Api\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.dll
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Api\bin\Debug\net8.0\Life4DunBackend.Api.xml
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Api\obj\Debug\net8.0\Life4DunBackend.Api.xml
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Api\obj\Debug\net8.0\Life4DunBackend.Api.sourcelink.json

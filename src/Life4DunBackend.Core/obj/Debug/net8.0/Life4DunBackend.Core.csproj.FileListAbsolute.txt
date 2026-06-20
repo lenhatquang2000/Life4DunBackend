@@ -9,3 +9,4 @@ E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Li
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\refint\Life4DunBackend.Core.dll
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.pdb
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\ref\Life4DunBackend.Core.dll
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.sourcelink.json

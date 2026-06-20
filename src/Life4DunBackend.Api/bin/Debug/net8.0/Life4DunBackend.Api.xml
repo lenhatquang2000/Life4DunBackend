@@ -61,7 +61,7 @@
             Lấy thông tin người chơi theo ID
             </summary>
         </member>
-        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.CreatePlayer(System.Guid,Life4DunBackend.Core.DTOs.CreatePlayerDto)">
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.CreatePlayer(Life4DunBackend.Core.DTOs.CreatePlayerDto)">
             <summary>
             Khởi tạo nhân vật (Player) mới cho một User cụ thể.
             </summary>
@@ -69,8 +69,7 @@
             Tạo một nhân vật trong game liên kết với tài khoản User.
             Nhân vật sẽ được khởi tạo với các thông số thuộc tính mặc định trong cột JSON Attributes.
             </remarks>
-            <param name="userId">ID của tài khoản User sở hữu nhân vật</param>
-            <param name="createPlayerDto">Thông tin tạo nhân vật mới (Tên nhân vật / Username)</param>
+            <param name="createPlayerDto">Thông tin tạo nhân vật mới (UserId và Tên nhân vật)</param>
             <returns>Thông tin nhân vật vừa khởi tạo thành công</returns>
             <response code="201">Tạo nhân vật thành công</response>
             <response code="400">Tên nhân vật đã tồn tại, hoặc dữ liệu không hợp lệ</response>

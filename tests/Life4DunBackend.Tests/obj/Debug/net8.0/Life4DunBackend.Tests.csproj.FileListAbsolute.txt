@@ -97,3 +97,4 @@ E:\Workspace\MySelf\Life4DunBackend\tests\Life4DunBackend.Tests\obj\Debug\net8.0
 E:\Workspace\MySelf\Life4DunBackend\tests\Life4DunBackend.Tests\obj\Debug\net8.0\Life4DunBackend.Tests.pdb
 E:\Workspace\MySelf\Life4DunBackend\tests\Life4DunBackend.Tests\obj\Debug\net8.0\Life4DunBackend.Tests.genruntimeconfig.cache
 E:\Workspace\MySelf\Life4DunBackend\tests\Life4DunBackend.Tests\obj\Debug\net8.0\ref\Life4DunBackend.Tests.dll
+E:\Workspace\MySelf\Life4DunBackend\tests\Life4DunBackend.Tests\obj\Debug\net8.0\Life4DunBackend.Tests.sourcelink.json

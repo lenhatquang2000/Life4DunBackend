@@ -16,3 +16,4 @@ E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Infrastructure\obj\Debug
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Infrastructure\obj\Debug\net8.0\Life4DunBackend.Infrastructure.genruntimeconfig.cache
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Infrastructure\obj\Debug\net8.0\ref\Life4DunBackend.Infrastructure.dll
 E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Infrastructure\obj\Debug\net8.0\EFCoreMySqlJsonMicrosoft.cs
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Infrastructure\obj\Debug\net8.0\Life4DunBackend.Infrastructure.sourcelink.json
