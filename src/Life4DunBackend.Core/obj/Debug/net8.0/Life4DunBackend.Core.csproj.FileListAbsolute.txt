@@ -1,0 +1,11 @@
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\bin\Debug\net8.0\Life4DunBackend.Core.deps.json
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\bin\Debug\net8.0\Life4DunBackend.Core.dll
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\bin\Debug\net8.0\Life4DunBackend.Core.pdb
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.AssemblyInfoInputs.cache
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.AssemblyInfo.cs
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.csproj.CoreCompileInputs.cache
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.dll
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\refint\Life4DunBackend.Core.dll
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\Life4DunBackend.Core.pdb
+E:\Workspace\MySelf\Life4DunBackend\src\Life4DunBackend.Core\obj\Debug\net8.0\ref\Life4DunBackend.Core.dll

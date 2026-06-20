@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Life4DunBackend.Core/1.0.0": {
+        "runtime": {
+          "Life4DunBackend.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Life4DunBackend.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

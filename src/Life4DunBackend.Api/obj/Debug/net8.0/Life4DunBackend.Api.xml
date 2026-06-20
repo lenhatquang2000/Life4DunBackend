@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Life4DunBackend.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Life4DunBackend.Api.Controllers.AuthController">
+            <summary>
+            API Controller xử lý đăng ký và đăng nhập tài khoản User.
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.AuthController.Register(Life4DunBackend.Core.DTOs.RegisterDto)">
+            <summary>
+            Đăng ký tài khoản User mới (chưa tạo nhân vật/player).
+            </summary>
+            <remarks>
+            Gửi thông tin Email, Mật khẩu và Tên đầy đủ để tạo tài khoản User.
+            Sau khi có tài khoản User, Client có thể gọi API tạo Player để khởi tạo nhân vật.
+            </remarks>
+            <param name="registerDto">Thông tin đăng ký tài khoản (Email, Mật khẩu, Tên đầy đủ)</param>
+            <returns>Thông tin tài khoản User vừa tạo thành công</returns>
+            <response code="200">Đăng ký tài khoản thành công</response>
+            <response code="400">Email đã được sử dụng trước đó, hoặc dữ liệu không hợp lệ</response>
+            <response code="500">Lỗi máy chủ trong quá trình xử lý</response>
+        </member>
+        <member name="T:Life4DunBackend.Api.Controllers.DatabaseController">
+            <summary>
+            API Controller để kiểm tra kết nối database
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.DatabaseController.HealthCheck">
+            <summary>
+            Kiểm tra kết nối database
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.DatabaseController.GetDatabaseInfo">
+            <summary>
+            Lấy thông tin database
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.GameController.GetSession(System.Guid)">
+            <summary>
+            API lấy thông tin Session hiện tại của Người chơi.
+            </summary>
+            <param name="playerId">ID định danh của Player (UUID)</param>
+            <response code="200">Trả về thông tin phiên chơi hợp lệ</response>
+            <response code="404">Không tìm thấy phiên chơi nào</response>
+        </member>
+        <member name="T:Life4DunBackend.Api.Controllers.PlayersController">
+            <summary>
+            API Controller để quản lý thông tin người chơi
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.GetPlayers">
+            <summary>
+            Lấy danh sách tất cả người chơi
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.GetPlayer(System.Guid)">
+            <summary>
+            Lấy thông tin người chơi theo ID
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.CreatePlayer(System.Guid,Life4DunBackend.Core.DTOs.CreatePlayerDto)">
+            <summary>
+            Khởi tạo nhân vật (Player) mới cho một User cụ thể.
+            </summary>
+            <remarks>
+            Tạo một nhân vật trong game liên kết với tài khoản User.
+            Nhân vật sẽ được khởi tạo với các thông số thuộc tính mặc định trong cột JSON Attributes.
+            </remarks>
+            <param name="userId">ID của tài khoản User sở hữu nhân vật</param>
+            <param name="createPlayerDto">Thông tin tạo nhân vật mới (Tên nhân vật / Username)</param>
+            <returns>Thông tin nhân vật vừa khởi tạo thành công</returns>
+            <response code="201">Tạo nhân vật thành công</response>
+            <response code="400">Tên nhân vật đã tồn tại, hoặc dữ liệu không hợp lệ</response>
+            <response code="404">Không tìm thấy tài khoản User</response>
+            <response code="500">Lỗi hệ thống</response>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.UpdatePlayer(System.Guid,Life4DunBackend.Core.DTOs.PlayerDto)">
+            <summary>
+            Cập nhật thông tin người chơi
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.DeletePlayer(System.Guid)">
+            <summary>
+            Xóa người chơi
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.PlayersController.GetLeaderboard">
+            <summary>
+            Lấy bảng xếp hạng (Top 10)
+            </summary>
+        </member>
+    </members>
+</doc>

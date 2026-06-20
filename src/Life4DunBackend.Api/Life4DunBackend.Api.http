@@ -1,0 +1,6 @@
+@Life4DunBackend.Api_HostAddress = http://localhost:5205
+
+GET {{Life4DunBackend.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
