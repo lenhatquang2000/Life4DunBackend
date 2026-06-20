@@ -15,6 +15,7 @@ public class GameDbContext : DbContext
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<Player> Players { get; set; } = null!;
     public DbSet<GameSession> GameSessions { get; set; } = null!;
+    public DbSet<RolePermission> RolePermissions { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -46,6 +47,10 @@ public class GameDbContext : DbContext
             
             // Set default values
             entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.Role)
+                .IsRequired()
+                .HasMaxLength(20)
+                .HasDefaultValue("Player");
             // Don't set default value for CreatedAt, will be set by application
         });
 
@@ -94,6 +99,22 @@ public class GameDbContext : DbContext
             entity.Property(e => e.RewardGold).HasDefaultValue(0);
             entity.Property(e => e.RewardExperience).HasDefaultValue(0);
             entity.Property(e => e.EnemiesDefeated).HasDefaultValue(0);
+        });
+
+        // Configure RolePermission entity
+        modelBuilder.Entity<RolePermission>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.RoleName)
+                .IsRequired()
+                .HasMaxLength(50);
+                
+            entity.Property(e => e.Resource)
+                .IsRequired()
+                .HasMaxLength(100);
+                
+            entity.HasIndex(e => e.RoleName);
         });
     }
 }

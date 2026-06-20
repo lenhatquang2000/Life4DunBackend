@@ -72,7 +72,8 @@ public class AuthController : ControllerBase
                 FullName = registerDto.FullName,
                 CreatedAt = DateTime.UtcNow,
                 LastLoginAt = DateTime.UtcNow,
-                IsActive = true
+                IsActive = true,
+                Role = "Player"
             };
 
             // 4. Lưu vào cơ sở dữ liệu
@@ -85,6 +86,7 @@ public class AuthController : ControllerBase
                 Id = user.Id,
                 Email = user.Email,
                 FullName = user.FullName,
+                Role = user.Role,
                 CreatedAt = user.CreatedAt,
                 LastLoginAt = user.LastLoginAt,
                 IsActive = user.IsActive,
@@ -177,6 +179,7 @@ public class AuthController : ControllerBase
                 UserId = user.Id,
                 Email = user.Email,
                 FullName = user.FullName,
+                Role = user.Role,
                 Token = token,
                 ExpiresAt = DateTime.UtcNow.AddHours(2)
             };

@@ -12,6 +12,7 @@ public class User
     public DateTime CreatedAt { get; set; }
     public DateTime? LastLoginAt { get; set; }
     public bool IsActive { get; set; } = true;
+    public string Role { get; set; } = "Player";
     
     // Navigation property
     public ICollection<Player> Players { get; set; } = new List<Player>();

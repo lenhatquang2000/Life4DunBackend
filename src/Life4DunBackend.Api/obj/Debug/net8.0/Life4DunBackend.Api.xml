@@ -111,5 +111,19 @@
             Lấy bảng xếp hạng (Top 10)
             </summary>
         </member>
+        <member name="T:Life4DunBackend.Api.Controllers.RolePermissionsController">
+            <summary>
+            API Controller quản lý và truy vấn phân quyền RolePermission
+            </summary>
+        </member>
+        <member name="M:Life4DunBackend.Api.Controllers.RolePermissionsController.GetPermissionsByRole(System.String)">
+            <summary>
+            Lấy danh sách các quyền (Resource) theo tên Role (RoleName)
+            </summary>
+            <param name="roleName">Tên của Role (ví dụ: admin, player)</param>
+            <returns>Danh sách các resource/permission thuộc về role đó</returns>
+            <response code="200">Trả về danh sách các permission</response>
+            <response code="500">Lỗi hệ thống</response>
+        </member>
     </members>
 </doc>
