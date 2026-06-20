@@ -15,6 +15,7 @@ public class Player
     public DateTime LastLoginAt { get; set; }
     public bool IsActive { get; set; } = true;
     public string? AvatarUrl { get; set; }
+    public string Model { get; set; } = "Mira";
     
     // Consolidate attributes/stats into JSON column
     public PlayerAttributes Attributes { get; set; } = new();

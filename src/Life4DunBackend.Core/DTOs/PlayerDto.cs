@@ -14,6 +14,7 @@ public class PlayerDto
     public DateTime CreatedAt { get; set; }
     public DateTime LastLoginAt { get; set; }
     public string? AvatarUrl { get; set; }
+    public string Model { get; set; } = string.Empty;
     public PlayerAttributesDto Attributes { get; set; } = new();
 }
 
@@ -45,6 +46,12 @@ public class CreatePlayerDto
     [System.ComponentModel.DataAnnotations.MinLength(3)]
     [System.ComponentModel.DataAnnotations.MaxLength(50)]
     public string Username { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Tên Model nhân vật muốn tạo (ví dụ: Mira)
+    /// </summary>
+    [System.ComponentModel.DataAnnotations.Required]
+    public string ModelName { get; set; } = "Mira";
 }
 
 /// <summary>

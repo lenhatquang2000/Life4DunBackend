@@ -42,6 +42,7 @@ public class PlayersController : ControllerBase
                     CreatedAt = p.CreatedAt,
                     LastLoginAt = p.LastLoginAt,
                     AvatarUrl = p.AvatarUrl,
+                    Model = p.Model,
                     Attributes = new PlayerAttributesDto
                     {
                         Level = p.Attributes.Level,
@@ -88,6 +89,7 @@ public class PlayersController : ControllerBase
                 CreatedAt = player.CreatedAt,
                 LastLoginAt = player.LastLoginAt,
                 AvatarUrl = player.AvatarUrl,
+                Model = player.Model,
                 Attributes = new PlayerAttributesDto
                 {
                     Level = player.Attributes.Level,
@@ -129,6 +131,7 @@ public class PlayersController : ControllerBase
                     CreatedAt = p.CreatedAt,
                     LastLoginAt = p.LastLoginAt,
                     AvatarUrl = p.AvatarUrl,
+                    Model = p.Model,
                     Attributes = new PlayerAttributesDto
                     {
                         Level = p.Attributes.Level,
@@ -190,6 +193,7 @@ public class PlayersController : ControllerBase
                 Id = Guid.NewGuid(),
                 UserId = createPlayerDto.UserId,
                 Username = createPlayerDto.Username,
+                Model = createPlayerDto.ModelName,
                 Experience = 0,
                 Gold = 100,
                 Gems = 0,
@@ -215,6 +219,7 @@ public class PlayersController : ControllerBase
                 Id = player.Id,
                 UserId = player.UserId,
                 Username = player.Username,
+                Model = player.Model,
                 Experience = player.Experience,
                 Gold = player.Gold,
                 Gems = player.Gems,
@@ -327,6 +332,7 @@ public class PlayersController : ControllerBase
                     Gems = p.Gems,
                     CreatedAt = p.CreatedAt,
                     LastLoginAt = p.LastLoginAt,
+                    Model = p.Model,
                     Attributes = new PlayerAttributesDto
                     {
                         Level = p.Attributes.Level,

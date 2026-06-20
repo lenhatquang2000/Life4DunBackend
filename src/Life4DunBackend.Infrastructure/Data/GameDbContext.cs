@@ -65,6 +65,11 @@ public class GameDbContext : DbContext
                 .IsRequired()
                 .HasMaxLength(50);
             
+            entity.Property(e => e.Model)
+                .IsRequired()
+                .HasMaxLength(50)
+                .HasDefaultValue("Mira");
+            
             entity.HasIndex(e => e.Username).IsUnique();
             entity.HasIndex(e => e.UserId);
             
