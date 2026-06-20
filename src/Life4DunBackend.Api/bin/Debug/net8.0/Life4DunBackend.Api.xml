@@ -23,6 +23,21 @@
             <response code="400">Email đã được sử dụng trước đó, hoặc dữ liệu không hợp lệ</response>
             <response code="500">Lỗi máy chủ trong quá trình xử lý</response>
         </member>
+        <member name="M:Life4DunBackend.Api.Controllers.AuthController.Login(Life4DunBackend.Core.DTOs.LoginDto)">
+            <summary>
+            Đăng nhập tài khoản User bằng Email hoặc Tên nhân vật (PlayerUsername).
+            </summary>
+            <remarks>
+            Hỗ trợ cả 2 cách thức đăng nhập:
+            - Sử dụng Email của tài khoản User.
+            - Sử dụng Username của bất kỳ nhân vật (Player) nào liên kết với User đó.
+            </remarks>
+            <param name="loginDto">Thông tin đăng nhập (Email/Username và Mật khẩu)</param>
+            <returns>Thông tin xác thực thành công và Token</returns>
+            <response code="200">Đăng nhập thành công</response>
+            <response code="400">Tài khoản hoặc mật khẩu không chính xác, hoặc dữ liệu không hợp lệ</response>
+            <response code="500">Lỗi hệ thống</response>
+        </member>
         <member name="T:Life4DunBackend.Api.Controllers.DatabaseController">
             <summary>
             API Controller để kiểm tra kết nối database

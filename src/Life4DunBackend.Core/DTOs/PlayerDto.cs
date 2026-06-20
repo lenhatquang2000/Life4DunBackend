@@ -62,7 +62,16 @@ public class RegisterDto
 /// </summary>
 public class LoginDto
 {
-    public string Email { get; set; } = string.Empty;
+    /// <summary>
+    /// Email đăng ký hoặc Tên nhân vật (Username) của người chơi
+    /// </summary>
+    [System.ComponentModel.DataAnnotations.Required]
+    public string UsernameOrEmail { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Mật khẩu của tài khoản
+    /// </summary>
+    [System.ComponentModel.DataAnnotations.Required]
     public string Password { get; set; } = string.Empty;
 }
 

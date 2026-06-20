@@ -100,4 +100,94 @@ public class AuthController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Lỗi hệ thống khi xử lý đăng ký." });
         }
     }
+
+    /// <summary>
+    /// Đăng nhập tài khoản User bằng Email hoặc Tên nhân vật (PlayerUsername).
+    /// </summary>
+    /// <remarks>
+    /// Hỗ trợ cả 2 cách thức đăng nhập:
+    /// - Sử dụng Email của tài khoản User.
+    /// - Sử dụng Username của bất kỳ nhân vật (Player) nào liên kết với User đó.
+    /// </remarks>
+    /// <param name="loginDto">Thông tin đăng nhập (Email/Username và Mật khẩu)</param>
+    /// <returns>Thông tin xác thực thành công và Token</returns>
+    /// <response code="200">Đăng nhập thành công</response>
+    /// <response code="400">Tài khoản hoặc mật khẩu không chính xác, hoặc dữ liệu không hợp lệ</response>
+    /// <response code="500">Lỗi hệ thống</response>
+    [HttpPost("login")]
+    [ProducesResponseType(typeof(AuthResponseDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<AuthResponseDto>> Login(LoginDto loginDto)
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(loginDto.UsernameOrEmail) || string.IsNullOrWhiteSpace(loginDto.Password))
+            {
+                return BadRequest(new { message = "Email/Username và Password không được bỏ trống." });
+            }
+
+            User? user = null;
+
+            // 1. Tìm User theo Email trước
+            user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.UsernameOrEmail);
+
+            // 2. Nếu không tìm thấy, thử tìm theo tên nhân vật (Player Username)
+            if (user == null)
+            {
+                var player = await _context.Players
+                    .Include(p => p.User)
+                    .FirstOrDefaultAsync(p => p.Username == loginDto.UsernameOrEmail);
+
+                if (player != null)
+                {
+                    user = player.User;
+                }
+            }
+
+            // 3. Kiểm tra sự tồn tại của User
+            if (user == null)
+            {
+                return BadRequest(new { message = "Tài khoản hoặc mật khẩu không chính xác." });
+            }
+
+            // 4. Kiểm tra xem tài khoản có đang hoạt động không
+            if (!user.IsActive)
+            {
+                return BadRequest(new { message = "Tài khoản hiện đang bị khóa." });
+            }
+
+            // 5. Xác minh mật khẩu hash
+            var isPasswordValid = BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash);
+            if (!isPasswordValid)
+            {
+                return BadRequest(new { message = "Tài khoản hoặc mật khẩu không chính xác." });
+            }
+
+            // 6. Cập nhật thời gian đăng nhập cuối cùng
+            user.LastLoginAt = DateTime.UtcNow;
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+
+            // 7. Tạo token giả lập (Sẽ thay thế bằng JWT trong tương lai)
+            var token = Guid.NewGuid().ToString("N");
+
+            var response = new AuthResponseDto
+            {
+                UserId = user.Id,
+                Email = user.Email,
+                FullName = user.FullName,
+                Token = token,
+                ExpiresAt = DateTime.UtcNow.AddHours(2)
+            };
+
+            _logger.LogInformation($"User {user.Email} đăng nhập thành công.");
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Lỗi xảy ra khi đăng nhập: {ex.Message}");
+            return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Lỗi hệ thống khi xử lý đăng nhập." });
+        }
+    }
 }
